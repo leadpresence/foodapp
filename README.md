@@ -1,7 +1,7 @@
 # foodapp
 
-A new Food Aplication project.
+A new Food Application project.
 
-## Getting Started
+
 
 
