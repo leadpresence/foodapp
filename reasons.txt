@@ -1,0 +1,10 @@
+Choice Tool:
+
+The tool for development is flutter with Dart Language. Its taken as the best choice for this because it has a large usage in the present mobile development industry.
+
+Flutter has a large community and as you may know flutter & dart Language is  highly backed by google. 
+I have choosen it because I am skilled at it over react native or ionic, in addition to that flutter has good amount of packages that ensure fast development.
+
+Drawback:
+
+Presently the only draw back I see with flutter is that it single threaded in its processing , while native conterparts such as kotlin or java are multi-threaded. This however does not pose any chanllenges as  the framework has a built in enging that handles processing in loops in an efficient way.

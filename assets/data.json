@@ -1,0 +1,116 @@
+{
+
+    "foods":[
+        { 
+            
+            "vegetables ":[
+                            {
+                                "id":1,
+                                "price":"",
+                                "name":"cocumber and shrimps",
+                                "imgrrl":"",
+                                "isliked":false,
+                                "detail":"this contains nutritional benefits of ths meal kindly read more.."
+                            },
+                            {
+                                "id":2,
+                                    "name":"",
+                                    "price":"",
+                                    "imgurl":"",
+                                    "detail":"",
+                                    "isliked":false
+                            },
+                            {
+                                "id":3,
+                                    "name":"",
+                                    "price":"",
+                                    "imgurl":"",
+                                    "detail":"",
+                                    "isliked":false
+                            },
+                            {
+                                "id":4,
+                                    "name":"",
+                                    "price":"",
+                                    "imgurl":"",
+                                    "detail":"",
+                                    "isliked":false
+                            }
+                            
+            ]},
+
+
+       {
+           "dairy":[
+                                {
+                                    "id":1,
+                                    "name":"",
+                                    "price":"",
+                                    "imgurl":"",
+                                    "detail":"",
+                                    "isliked":false
+                                    
+                                
+                            },
+
+                            {
+                                "id":2,
+                                    "name":"",
+                                    "price":"",
+                                    "imgurl":"",
+                                    "detail":"",
+                                    "isliked":false
+                            },
+                            {
+                                "id":3,
+                                    "name":"",
+                                    "price":"",
+                                    "imgurl":"",
+                                    "detail":"",
+                                    "isliked":false
+                            }
+                        
+        
+        ]},
+
+       {
+           "protein":[
+          
+                                {
+                                    "id":1,
+                                    "name":"beans",
+                                    "imgurl":"",
+                                    "detail":"Beans come from a large family of plants called legumes. Other edible legumes include chick peas, lentils, black-eyed peas and soybeans. Most legumes have long seedpods in which the seeds grow. After the seeds have grown into what we call beans or peas, the seedpods are picked off the plant and split open."
+
+                                
+                                },
+                                {
+                                    "id":2,
+                                        "name":"",
+                                        "price":"",
+                                        "imgurl":"",
+                                        "detail":"",
+                                        "isliked":false
+                                },
+                                {
+                                    "id":3,
+                                    "name":"",
+                                    "price":"",
+                                    "imgurl":"",
+                                    "detail":"",
+                                    "isliked":false
+                                }
+                            
+            ]}
+
+
+
+
+
+
+
+]
+
+
+
+}

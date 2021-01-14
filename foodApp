@@ -1,0 +1,16 @@
+>list categories in master screen with side navigation bar 
+>list foods in the List screen
+>basket screen
+>images from a URL.
+
+
+
+--------------
+Use cases
+
+--Foods can be marked as favourite,
+--food should have unfavourite ability
+--persist favorites
+--user should add foods to the basket
+--can review foods on the basket screen
+
