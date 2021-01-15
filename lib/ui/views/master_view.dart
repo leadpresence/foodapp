@@ -42,8 +42,8 @@ class _MasterState extends State<Master> {
               boxShadow: [
                 BoxShadow(
                   spreadRadius: -12,
-                  offset: Offset(0, 10),
-                  color: Colors.grey.withOpacity(0.2),
+                  offset: Offset(0, 5),
+                  color: Colors.grey.withOpacity(0.02),
                   blurRadius: 25,
                 ),
               ],
@@ -116,6 +116,7 @@ class BuildItemsUI extends HookWidget {
                 name: kname,
                 description: kdescription,
                 img: img,
+                foods: prov.foodFeeds.where((element) => element.category==kname),
               );
             });
       },
