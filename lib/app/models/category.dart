@@ -56,6 +56,7 @@ class FCategory {
   String price;
   bool isliked;
   String imgurl;
+  String category;
   FCategory({
     this.id,
     this.name,
@@ -63,6 +64,7 @@ class FCategory {
     this.price,
     this.isliked,
     this.imgurl,
+    this.category,
   });
 
   FCategory copyWith({
@@ -72,6 +74,7 @@ class FCategory {
     String price,
     bool isliked,
     String imgurl,
+    String category,
   }) {
     return FCategory(
       id: id ?? this.id,
@@ -80,6 +83,7 @@ class FCategory {
       price: price ?? this.price,
       isliked: isliked ?? this.isliked,
       imgurl: imgurl ?? this.imgurl,
+      category: category ?? this.category,
     );
   }
 
@@ -91,12 +95,13 @@ class FCategory {
       'price': price,
       'isliked': isliked,
       'imgurl': imgurl,
+      'category': category,
     };
   }
 
   factory FCategory.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
-
+  
     return FCategory(
       id: map['id'],
       name: map['name'],
@@ -104,39 +109,41 @@ class FCategory {
       price: map['price'],
       isliked: map['isliked'],
       imgurl: map['imgurl'],
+      category: map['category'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory FCategory.fromJson(String source) =>
-      FCategory.fromMap(json.decode(source));
+  factory FCategory.fromJson(String source) => FCategory.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'FCategory(id: $id, name: $name, details: $details, price: $price, isliked: $isliked, imgurl: $imgurl)';
+    return 'FCategory(id: $id, name: $name, details: $details, price: $price, isliked: $isliked, imgurl: $imgurl, category: $category)';
   }
 
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
-
+  
     return o is FCategory &&
-        o.id == id &&
-        o.name == name &&
-        o.details == details &&
-        o.price == price &&
-        o.isliked == isliked &&
-        o.imgurl == imgurl;
+      o.id == id &&
+      o.name == name &&
+      o.details == details &&
+      o.price == price &&
+      o.isliked == isliked &&
+      o.imgurl == imgurl &&
+      o.category == category;
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
-        name.hashCode ^
-        details.hashCode ^
-        price.hashCode ^
-        isliked.hashCode ^
-        imgurl.hashCode;
+      name.hashCode ^
+      details.hashCode ^
+      price.hashCode ^
+      isliked.hashCode ^
+      imgurl.hashCode ^
+      category.hashCode;
   }
 }

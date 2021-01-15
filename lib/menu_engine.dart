@@ -50,10 +50,8 @@ class _MenuEngineState extends State<MenuEngine>
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/KD9UFpgeFS.jpg"),
-                    fit: BoxFit.scaleDown)),
-          ),
+                
+          )),
           BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 9, sigmaY: 9),
             child: Column(
@@ -69,16 +67,16 @@ class _MenuEngineState extends State<MenuEngine>
                               .toUpperCase(),
                           style: TextStyle(
                               fontSize: 19,
-                              color: Colors.pinkAccent[700],
+                              color: Colors.orangeAccent[700],
                               fontWeight: FontWeight.w700))
                     ],
                   ),
                 ),
                 VMargin(10),
-                Divider(
-                  color: Colors.pinkAccent[700],
-                  height: 3.5,
-                ),
+                // Divider(
+                //   color: Colors.orangeAccent[700],
+                //   height: 3.5,
+                // ),
                 Flexible(
                   child: TabBarView(
                       controller: tabController,
@@ -114,7 +112,7 @@ class _MenuEngineState extends State<MenuEngine>
                 color: Colors.orange,
               ),
               title: Text("Meals"),
-              selectedColor: Colors.pink,
+              selectedColor: Colors.orange,
             ),
             SalomonBottomBarItem(
               icon: Icon(
@@ -122,15 +120,15 @@ class _MenuEngineState extends State<MenuEngine>
                 color: Colors.orange,
               ),
               title: Text("Favorites"),
-              selectedColor: Colors.pink,
+              selectedColor: Colors.orange,
             ),
             SalomonBottomBarItem(
               icon: Icon(
                 FluentIcons.cart_24_filled,
-                color: Colors.pink,
+                color: Colors.orange,
               ),
               title: Text("Basket"),
-              selectedColor: Colors.pink,
+              selectedColor: Colors.orange,
             ),
           ],
         ),

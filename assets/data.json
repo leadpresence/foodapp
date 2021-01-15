@@ -1,28 +1,28 @@
 {
 
-    "foods":[
-        { 
-            
-            "vegetables ":[
-                            {
+    "categories":[
+                         { 
                                 "id":1,
-                                "price":"",
+                                "price":"100",
+                                "category":"vegetables",
                                 "name":"cocumber and shrimps",
-                                "imgrrl":"",
+                                "imgurl":"https://image.freepik.com/free-photo/kheera-cocumber_57665-707.jpg",
                                 "isliked":false,
                                 "detail":"this contains nutritional benefits of ths meal kindly read more.."
                             },
                             {
                                 "id":2,
-                                    "name":"",
-                                    "price":"",
-                                    "imgurl":"",
-                                    "detail":"",
+                                    "name":"Broccoli",
+                                "category":"vegetables",
+                                    "price":"87",
+                                    "imgurl":"https://image.freepik.com/free-photo/fresh-broccoli-vegetable_144627-20156.jpg",
+                                    "detail":"Broccoli is a cruciferous vegetable, alongside kale, cauliflower, Brussels sprouts, bok choy, cabbage, collard greens, rutabaga, and turnips.",
                                     "isliked":false
                             },
                             {
                                 "id":3,
-                                    "name":"",
+                                    "name":"beans",
+                                  "category":"protein",
                                     "price":"",
                                     "imgurl":"",
                                     "detail":"",
@@ -30,87 +30,74 @@
                             },
                             {
                                 "id":4,
-                                    "name":"",
+                                "name":"Almonds",
+                                  "category":"protein",
                                     "price":"",
                                     "imgurl":"",
                                     "detail":"",
                                     "isliked":false
-                            }
-                            
-            ]},
-
-
-       {
-           "dairy":[
+                            },
                                 {
-                                    "id":1,
-                                    "name":"",
-                                    "price":"",
-                                    "imgurl":"",
-                                    "detail":"",
-                                    "isliked":false
-                                    
-                                
-                            },
-
-                            {
-                                "id":2,
-                                    "name":"",
-                                    "price":"",
+                                    "id":5,
+                                    "name":"Chicken breast",
+                                    "category":"protein",
+                                    "price":"95",
                                     "imgurl":"",
                                     "detail":"",
                                     "isliked":false
                             },
                             {
-                                "id":3,
-                                    "name":"",
+                                    "id":6,
+                                    "name":"milk",
+                                    "price":"",
+                                     "category":"dairy",
+                                    "imgurl":"",
+                                    "detail":"",
+                                    "isliked":false
+                            },
+                            {
+                                   "id":7,
+                                    "name":"eggs",
+                                   "category":"dairy",
                                     "price":"",
                                     "imgurl":"",
                                     "detail":"",
                                     "isliked":false
-                            }
-                        
-        
-        ]},
-
-       {
-           "protein":[
+                            },
           
                                 {
-                                    "id":1,
-                                    "name":"beans",
+                                    "id":8,
+                                    "name":"soya",
+                                    "category":"dairy",
                                     "imgurl":"",
-                                    "detail":"Beans come from a large family of plants called legumes. Other edible legumes include chick peas, lentils, black-eyed peas and soybeans. Most legumes have long seedpods in which the seeds grow. After the seeds have grown into what we call beans or peas, the seedpods are picked off the plant and split open."
-
+                                    "detail":"Beans come from a large family of plants called legumes. Other edible legumes include chick peas, lentils, black-eyed peas and soybeans. Most legumes have long seedpods in which the seeds grow. After the seeds have grown into what we call beans or peas, the seedpods are picked off the plant and split open.",
+                                    "isliked":false
                                 
                                 },
                                 {
-                                    "id":2,
-                                        "name":"",
-                                        "price":"",
+                                      "id":9,
+                                        "name":"cakes",
+                                        "category":"carbohydrates",
+
+                                        "price":"203",
                                         "imgurl":"",
                                         "detail":"",
                                         "isliked":false
                                 },
                                 {
-                                    "id":3,
-                                    "name":"",
-                                    "price":"",
+                                    "id":10,
+                                    "name":"Bread",
+                                    "category":"carbohydrates",
+                                    "price":"139",
                                     "imgurl":"",
                                     "detail":"",
                                     "isliked":false
                                 }
                             
-            ]}
 
 
-
-
-
-
-
+                           
 ]
-
 
 
 }
