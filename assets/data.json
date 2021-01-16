@@ -23,8 +23,8 @@
                                 "id":3,
                                     "name":"beans",
                                   "category":"protein",
-                                    "price":"",
-                                    "imgurl":"",
+                                    "price":"99",
+                                    "imgurl":"https://image.freepik.com/free-photo/red-beans-wooden-bowl-isolated-white_88281-1840.jpg",
                                     "detail":"",
                                     "isliked":false
                             },
@@ -32,8 +32,8 @@
                                 "id":4,
                                 "name":"Almonds",
                                   "category":"protein",
-                                    "price":"",
-                                    "imgurl":"",
+                                    "price":"75",
+                                    "imgurl":"https://image.freepik.com/free-photo/almonds-isolated-white-background_252965-339.jpg",
                                     "detail":"",
                                     "isliked":false
                             },
@@ -42,16 +42,16 @@
                                     "name":"Chicken breast",
                                     "category":"protein",
                                     "price":"95",
-                                    "imgurl":"",
+                                    "imgurl":"https://image.freepik.com/free-photo/raw-chicken-meat_1203-6759.jpg",
                                     "detail":"",
                                     "isliked":false
                             },
                             {
                                     "id":6,
                                     "name":"milk",
-                                    "price":"",
+                                    "price":"200",
                                      "category":"dairy",
-                                    "imgurl":"",
+                                    "imgurl":"https://image.freepik.com/free-photo/side-view-bottles-milk-with-bowl-flour-wheat-white-wooden-blue-cloth-background-horizontal_176474-4675.jpg",
                                     "detail":"",
                                     "isliked":false
                             },
@@ -59,8 +59,8 @@
                                    "id":7,
                                     "name":"eggs",
                                    "category":"dairy",
-                                    "price":"",
-                                    "imgurl":"",
+                                    "price":"122",
+                                    "imgurl":"https://image.freepik.com/free-vector/hard-boiled-raw-eggs-realistic-set-isolated-white-background_1284-17845.jpg",
                                     "detail":"",
                                     "isliked":false
                             },
@@ -68,8 +68,9 @@
                                 {
                                     "id":8,
                                     "name":"soya",
+                                    "price":"75",
                                     "category":"dairy",
-                                    "imgurl":"",
+                                    "imgurl":"https://image.freepik.com/free-photo/soy-beans_1339-225.jpg",
                                     "detail":"Beans come from a large family of plants called legumes. Other edible legumes include chick peas, lentils, black-eyed peas and soybeans. Most legumes have long seedpods in which the seeds grow. After the seeds have grown into what we call beans or peas, the seedpods are picked off the plant and split open.",
                                     "isliked":false
                                 
@@ -80,7 +81,7 @@
                                         "category":"carbohydrates",
 
                                         "price":"203",
-                                        "imgurl":"",
+                                        "imgurl":"https://image.freepik.com/free-photo/assortment-pieces-cake_114579-30725.jpg",
                                         "detail":"",
                                         "isliked":false
                                 },
@@ -89,7 +90,7 @@
                                     "name":"Bread",
                                     "category":"carbohydrates",
                                     "price":"139",
-                                    "imgurl":"",
+                                    "imgurl":"https://image.freepik.com/free-photo/different-types-bread-made-from-wheat-flour_140725-5648.jpg",
                                     "detail":"",
                                     "isliked":false
                                 }

@@ -116,7 +116,7 @@ class BuildItemsUI extends HookWidget {
                 name: kname,
                 description: kdescription,
                 img: img,
-                foods: prov.foodFeeds.where((element) => element.category==kname),
+                foods: prov.foodFeeds.where((element) => element.category==kname).toList(),
               );
             });
       },
