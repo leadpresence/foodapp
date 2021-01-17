@@ -63,7 +63,7 @@ class _MenuEngineState extends State<MenuEngine>
                     children: [
                       HMargin(170),
                       Text(
-                          "${tabController.index == 0 ? 'Meals' : tabController.index == 1 ? 'Whishlist' : tabController.index == 2 ? 'Basket' : ''}"
+                          "${tabController.index == 0 ? 'Meals' : tabController.index == 1 ? 'Favorites' : tabController.index == 2 ? 'Basket' : ''}"
                               .toUpperCase(),
                           style: TextStyle(
                               fontSize: 19,

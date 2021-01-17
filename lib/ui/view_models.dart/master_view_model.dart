@@ -38,9 +38,7 @@ class MasterVM extends ChangeNotifier {
 //FAKE LOCAL API
   fetchFoodCategories(context) async {
     final myFoods = await rootBundle.loadString('assets/data.json');
-
     //DECODE JSON IN TO A LIST OF TYLES FOODS CAT.
     foodFeeds = FCategoryList.fromJson(myFoods).categories.toList();
-    print(foodFeeds);
   }
 }

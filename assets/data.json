@@ -8,6 +8,8 @@
                                 "name":"cocumber and shrimps",
                                 "imgurl":"https://image.freepik.com/free-photo/kheera-cocumber_57665-707.jpg",
                                 "isliked":false,
+                                "tobasket":false,
+
                                 "detail":"this contains nutritional benefits of ths meal kindly read more.."
                             },
                             {
@@ -17,6 +19,8 @@
                                     "price":"87",
                                     "imgurl":"https://image.freepik.com/free-photo/fresh-broccoli-vegetable_144627-20156.jpg",
                                     "detail":"Broccoli is a cruciferous vegetable, alongside kale, cauliflower, Brussels sprouts, bok choy, cabbage, collard greens, rutabaga, and turnips.",
+                                    "tobasket":false,
+                                    
                                     "isliked":false
                             },
                             {
@@ -26,6 +30,8 @@
                                     "price":"99",
                                     "imgurl":"https://image.freepik.com/free-photo/red-beans-wooden-bowl-isolated-white_88281-1840.jpg",
                                     "detail":"",
+                                    "tobasket":false,
+
                                     "isliked":false
                             },
                             {
@@ -35,6 +41,8 @@
                                     "price":"75",
                                     "imgurl":"https://image.freepik.com/free-photo/almonds-isolated-white-background_252965-339.jpg",
                                     "detail":"",
+                                    "tobasket":false,
+
                                     "isliked":false
                             },
                                 {
@@ -44,6 +52,7 @@
                                     "price":"95",
                                     "imgurl":"https://image.freepik.com/free-photo/raw-chicken-meat_1203-6759.jpg",
                                     "detail":"",
+                                    "tobasket":false,
                                     "isliked":false
                             },
                             {
@@ -53,6 +62,8 @@
                                      "category":"dairy",
                                     "imgurl":"https://image.freepik.com/free-photo/side-view-bottles-milk-with-bowl-flour-wheat-white-wooden-blue-cloth-background-horizontal_176474-4675.jpg",
                                     "detail":"",
+                                    "tobasket":false,
+
                                     "isliked":false
                             },
                             {
@@ -62,6 +73,8 @@
                                     "price":"122",
                                     "imgurl":"https://image.freepik.com/free-vector/hard-boiled-raw-eggs-realistic-set-isolated-white-background_1284-17845.jpg",
                                     "detail":"",
+                                    "tobasket":false,
+
                                     "isliked":false
                             },
           
@@ -72,6 +85,8 @@
                                     "category":"dairy",
                                     "imgurl":"https://image.freepik.com/free-photo/soy-beans_1339-225.jpg",
                                     "detail":"Beans come from a large family of plants called legumes. Other edible legumes include chick peas, lentils, black-eyed peas and soybeans. Most legumes have long seedpods in which the seeds grow. After the seeds have grown into what we call beans or peas, the seedpods are picked off the plant and split open.",
+                                    "tobasket":false,
+                                   
                                     "isliked":false
                                 
                                 },
@@ -83,6 +98,8 @@
                                         "price":"203",
                                         "imgurl":"https://image.freepik.com/free-photo/assortment-pieces-cake_114579-30725.jpg",
                                         "detail":"",
+                                    "tobasket":false,
+
                                         "isliked":false
                                 },
                                 {
@@ -92,6 +109,8 @@
                                     "price":"139",
                                     "imgurl":"https://image.freepik.com/free-photo/different-types-bread-made-from-wheat-flour_140725-5648.jpg",
                                     "detail":"",
+                                    "tobasket":false,
+
                                     "isliked":false
                                 }
                             

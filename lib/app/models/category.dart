@@ -55,6 +55,7 @@ class FCategory {
   String details;
   String price;
   bool isliked;
+  bool tobasket;
   String imgurl;
   String category;
   FCategory({
@@ -63,6 +64,7 @@ class FCategory {
     this.details,
     this.price,
     this.isliked,
+    this.tobasket,
     this.imgurl,
     this.category,
   });
@@ -73,6 +75,7 @@ class FCategory {
     String details,
     String price,
     bool isliked,
+    bool tobasket,
     String imgurl,
     String category,
   }) {
@@ -82,6 +85,7 @@ class FCategory {
       details: details ?? this.details,
       price: price ?? this.price,
       isliked: isliked ?? this.isliked,
+      tobasket: tobasket ?? this.tobasket,
       imgurl: imgurl ?? this.imgurl,
       category: category ?? this.category,
     );
@@ -94,6 +98,7 @@ class FCategory {
       'details': details,
       'price': price,
       'isliked': isliked,
+      'tobasket': tobasket,
       'imgurl': imgurl,
       'category': category,
     };
@@ -108,6 +113,7 @@ class FCategory {
       details: map['details'],
       price: map['price'],
       isliked: map['isliked'],
+      tobasket: map['tobasket'],
       imgurl: map['imgurl'],
       category: map['category'],
     );
@@ -119,7 +125,7 @@ class FCategory {
 
   @override
   String toString() {
-    return 'FCategory(id: $id, name: $name, details: $details, price: $price, isliked: $isliked, imgurl: $imgurl, category: $category)';
+    return 'FCategory(id: $id, name: $name, details: $details, price: $price, isliked: $isliked, tobasket: $tobasket, imgurl: $imgurl, category: $category)';
   }
 
   @override
@@ -132,6 +138,7 @@ class FCategory {
       o.details == details &&
       o.price == price &&
       o.isliked == isliked &&
+      o.tobasket == tobasket &&
       o.imgurl == imgurl &&
       o.category == category;
   }
@@ -143,6 +150,7 @@ class FCategory {
       details.hashCode ^
       price.hashCode ^
       isliked.hashCode ^
+      tobasket.hashCode ^
       imgurl.hashCode ^
       category.hashCode;
   }

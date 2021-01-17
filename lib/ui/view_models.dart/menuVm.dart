@@ -15,5 +15,8 @@ class MenuVM extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<Widget> pagesTabs = [Master(),BasketView(), Favorites()];
+  List<Widget> pagesTabs = [
+    Master(), 
+    Favorites(),
+    BasketView()];
 }
