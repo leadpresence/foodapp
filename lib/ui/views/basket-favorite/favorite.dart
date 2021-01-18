@@ -6,7 +6,8 @@ import 'package:flutter_riverpod/all.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:foodapp/app/uitils/margin.dart';
-import 'package:foodapp/ui/views/food_category_list/food_grid.dart';
+import 'package:foodapp/app/models/category.dart';
+
 
 class Favorites extends StatefulHookWidget {
   Favorites({Key key}) : super(key: key);
@@ -67,7 +68,7 @@ class _FavoritesState extends State<Favorites> {
                     Column(
                   children: [
                     Expanded(
-                      child: BuildIFoodGridUI(
+                      child: BuildFavIFoodGridUI(
                         kfoodlist: provider.favorites ?? [],
                       ),
                     ),
@@ -84,5 +85,159 @@ class _FavoritesState extends State<Favorites> {
                 )));
   }
 }
+
+
+
+class BuildFavIFoodGridUI extends HookWidget {
+  final List<FCategory> kfoodlist;
+  const BuildFavIFoodGridUI({Key key, this.kfoodlist}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      itemCount: kfoodlist.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, crossAxisSpacing: 4.0, mainAxisSpacing: 4.0),
+      itemBuilder: (BuildContext context, int index) {
+        return FavFoodBox(
+          name: kfoodlist[index].name,
+          imgurl: kfoodlist[index].imgurl,
+          price: kfoodlist[index].price,
+          isliked: kfoodlist[index].isliked,
+          category: kfoodlist[index].category,
+        );
+      },
+    );
+  }
+}
+
+class FavFoodBox extends HookWidget {
+  final String name, category, price, imgurl, detail;
+  final bool isliked, tobasket;
+  final int index;
+
+  const FavFoodBox(
+      {Key key,
+      this.index,
+      this.name,
+      this.category,
+      this.detail,
+      this.imgurl,
+      this.isliked,
+      this.tobasket,
+      this.price})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var provider = useProvider(favProv);
+
+    return Container(
+      decoration:
+          BoxDecoration(border: Border.all(width: 0.5, color: Colors.orange)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Stack(children: [
+            Container(
+              height: 155,
+              // width: 170,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: CachedNetworkImageProvider(imgurl ??
+                        'https://image.freepik.com/free-vector/seamless-pizza-ingredients_1176-269.jpg')),
+                borderRadius: BorderRadius.circular(5),
+              ),
+            ),
+            
+            Container(
+              height: 18,
+              width: 60,
+              decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomRight: Radius.circular(20))),
+              child: Text(
+                name ?? '',
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
+              ),
+            ),
+          ]),
+          SizedBox(
+            height: 3,
+          ),
+          Container(
+            color: Colors.white60,
+            height: 30,
+            // width: 170,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Chip(
+                  label: Text("\$${price ?? '0'}"),
+                  backgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(20),
+                          bottomRight: Radius.circular(20))),
+                ),
+                SizedBox(),
+                // InkWell(
+                //   splashColor: Colors.orange.shade200,
+                //   child: Icon(
+                //     FluentIcons.cart_24_filled,
+                //     size: 30,
+                //     color: Colors.grey,
+                //   ),
+                //   onTap: () {
+                //     provider.addToBasket(FCategory(
+                //       name: name,
+                //       price: price,
+                //       imgurl: imgurl,
+                //       isliked: isliked,
+                //       category: category,
+                //       details: detail,
+                //     ));
+                //   },
+                // ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 0.0, right: 8, top: 0, bottom: 8),
+                  child: InkWell(
+                  splashColor: Colors.orange.shade200,
+
+                    child: Icon(
+                      FluentIcons.delete_24_filled,
+                      size: 27,
+                    ),
+                    onTap: () {
+                      provider.removeFav(
+                        FCategory(
+                        name: name,
+                        price: price,
+                        imgurl: imgurl,
+                        isliked: isliked,
+                        category: category,
+                        details: detail,
+                      ));
+                    },
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
 
 

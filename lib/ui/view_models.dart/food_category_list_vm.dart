@@ -43,9 +43,9 @@ class FoodListViewModel extends ChangeNotifier {
 
 //remove from fav
 
-  void removeFromFavorite(String foodName) {
+  void removeFromFavorite(FCategory foodName) {
     for (final food in _favoriteFoods) {
-      if (food.name == foodName) {
+      if (_favoriteFoods.contains(foodName)) {
         _favoriteFoods.remove(food);
         break;
       }

@@ -12,6 +12,12 @@ class FavoritesVM extends ChangeNotifier {
     print(favorites);
   }
 
+  removeFav(FCategory f)async {
+    if (favorites.contains(f)) favorites.remove(f);
+    favorites = await service.getFavoriteFood();
+
+  }
+
   clear(context) async {
     await service.resetCacheTimeToNow();
   }

@@ -29,7 +29,7 @@ class StorageService extends ChangeNotifier {
     if (data == '') {
       return [];
     }
-      List<FCategory> favoriteFoods = _deserializeFoods(data);
+        List<FCategory> favoriteFoods = _deserializeFoods(data);
     return favoriteFoods;
   }
 
