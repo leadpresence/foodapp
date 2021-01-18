@@ -1,9 +1,9 @@
-# foodapp
+## foodapp
 
 A new Food Application project.
 
 
-#Features
+# Features
 - REST API
 - SharedPreferences
 - Image Cachinge
