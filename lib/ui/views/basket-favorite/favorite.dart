@@ -72,13 +72,7 @@ class _FavoritesState extends State<Favorites> {
                         kfoodlist: provider.favorites ?? [],
                       ),
                     ),
-                    FloatingActionButton(
-                      onPressed: () {
-                        provider.clear(context);
-                      },
-                      child: Icon(FluentIcons.delete_24_regular),
-                      backgroundColor: Colors.orange,
-                    )
+            
                   ],
                 )
 
@@ -150,7 +144,7 @@ class FavFoodBox extends HookWidget {
                 borderRadius: BorderRadius.circular(5),
               ),
             ),
-            
+
             Container(
               height: 18,
               width: 60,
@@ -189,24 +183,7 @@ class FavFoodBox extends HookWidget {
                           bottomRight: Radius.circular(20))),
                 ),
                 SizedBox(),
-                // InkWell(
-                //   splashColor: Colors.orange.shade200,
-                //   child: Icon(
-                //     FluentIcons.cart_24_filled,
-                //     size: 30,
-                //     color: Colors.grey,
-                //   ),
-                //   onTap: () {
-                //     provider.addToBasket(FCategory(
-                //       name: name,
-                //       price: price,
-                //       imgurl: imgurl,
-                //       isliked: isliked,
-                //       category: category,
-                //       details: detail,
-                //     ));
-                //   },
-                // ),
+
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 0.0, right: 8, top: 0, bottom: 8),
