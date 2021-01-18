@@ -33,7 +33,7 @@ class FoodItemModel extends HookWidget {
                   spreadRadius: -7,
                   offset: Offset(0, 10),
                   color: Colors.grey.withOpacity(0.2),
-                  blurRadius: 25,
+                  blurRadius: 15,
                 ),
               ],
               borderRadius: BorderRadius.circular(4))),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/all.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:foodapp/ui/views/basket_view.dart';
-import 'package:foodapp/ui/views/favorite.dart';
+import 'package:foodapp/ui/views/basket-favorite/basket_view.dart';
+import 'package:foodapp/ui/views/basket-favorite/favorite.dart';
 import 'package:foodapp/ui/views/master_view.dart';
 // pages
 

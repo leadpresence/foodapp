@@ -6,17 +6,22 @@ import 'dart:convert';
 class StorageService extends ChangeNotifier {
   static const sharePrefFavoritesKey = 'favoritesKey';
   static const sharedPrefBasketKey = 'basketKey';
+  static const sharedPrefLastCacheTimeKey = 'cache_time_key';
 
 //SAVE TO LOCAL SP
   Future<void> _saveToPreferences(String key, String value) async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setString(key, value);
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      prefs.setString(key, value);
+    } catch (e) {
+      print("An error ocuured");
+    }
   }
 
 //Retrieve from local SP
   Future<String> _getStringFromPreferences(String key) async {
     final prefs = await SharedPreferences.getInstance();
-    return Future<String>.value(prefs.getString(key) ?? '');
+    return (prefs.getString(key) ?? '');
   }
 
   Future<List<FCategory>> getFavoriteFood() async {
@@ -24,17 +29,17 @@ class StorageService extends ChangeNotifier {
     if (data == '') {
       return [];
     }
-
-    return _deserializeFoods(data);
+      List<FCategory> favoriteFoods = _deserializeFoods(data);
+    return favoriteFoods;
   }
 
+//convert data back to readable format for the view
+
   List<FCategory> _deserializeFoods(String data) {
-    final foodList = jsonDecode(data);
-    List<FCategory> list = [];
-    for (String food in foodList) {
-      list.add(FCategory(name: food));
-    }
-    return list;
+    Iterable l = jsonDecode(data);
+    List<FCategory> foods =
+        List<FCategory>.from(l.map((model) => FCategory.fromJson(model)));
+    return foods;
   }
 
 //favorites
@@ -44,28 +49,32 @@ class StorageService extends ChangeNotifier {
   }
 
   String _serializeFoods(List<FCategory> data) {
-    final myfoods = data.map((foodElement) => foodElement.name).toList();
+    final myfoods = data.map((foodElement) => foodElement).toList();
     return jsonEncode(myfoods);
   }
 
   //basket
 
   Future<void> saveFoodToBasket(List<FCategory> foodData) {
-    print(foodData);
     String jsonString = _serializeFoods(foodData);
-    return _saveToPreferences(sharePrefFavoritesKey, jsonString);
-    // _notifyListeners();
+
+    return _saveToPreferences(sharedPrefBasketKey, jsonString);
   }
 
-  Future<List<FCategory>> getFoodFoodBasket() async {
+  Future<List<FCategory>> getFoodBasket() async {
     String data = await _getStringFromPreferences(sharedPrefBasketKey);
-    print(data);
     if (data == '') {
       return [];
     }
     List<FCategory> foods = _deserializeFoods(data);
-    print(foods);
     return foods;
   }
-  
+
+  Future<void> resetCacheTimeToNow() async {
+    int timestamp = DateTime.now().millisecondsSinceEpoch;
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setInt(sharedPrefLastCacheTimeKey, timestamp);
+
+    prefs.clear();
+  }
 }

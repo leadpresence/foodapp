@@ -8,8 +8,11 @@ class FavoritesVM extends ChangeNotifier {
 
   loadData(context) async {
     favorites = await service.getFavoriteFood();
-    print("basket");
+    print("xxxxxx");
+    print(favorites);
+  }
 
-    print("=======>" + favorites.toString());
+  clear(context) async {
+    await service.resetCacheTimeToNow();
   }
 }

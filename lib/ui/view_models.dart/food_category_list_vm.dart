@@ -9,7 +9,7 @@ import 'package:foodapp/app/uitils/storage_service.dart';
 class FoodListViewModel extends ChangeNotifier {
   //temporary list of favorited foods
 
-  StorageService service= StorageService();
+  StorageService service = StorageService();
 
   List<FCategory> _favoriteFoods = [];
   List<FCategory> _foodBasktet = [];
@@ -24,25 +24,20 @@ class FoodListViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-
   void addToBasket(FCategory food) {
     _foodBasktet.add(food);
-    service.saveFoodToBasket(_foodBasktet);
 
+    service.saveFoodToBasket(_foodBasktet);
   }
 
-  void removeFromBasket(String foodName) {
-    for (final food in _foodBasktet) {
-      if (food.name == foodName) {
-        _foodBasktet.remove(food);
-        break;
-      }
-    }
+  void removeFromBasket(FCategory foodName) {
+        _favoriteFoods.add(foodName);
+
     service.saveFavoriteFood(_favoriteFoods);
   }
 
-  void addToFavorites(String foodName) {
-    _favoriteFoods.add(FCategory(name: foodName));
+  void addToFavorites(FCategory foodName) {
+    _favoriteFoods.add(foodName);
     service.saveFavoriteFood(_favoriteFoods);
   }
 
@@ -58,20 +53,20 @@ class FoodListViewModel extends ChangeNotifier {
     service.saveFavoriteFood(_favoriteFoods);
   }
 
-  void toggleFavoriteStatus(int choiceIndex) {
-    final isFavorite = !_favoriteFoods[choiceIndex].isliked;
-    final name = _favoriteFoods[choiceIndex].name;
+  // void toggleFavoriteStatus(int choiceIndex) {
+  //   final isFavorite = !_favoriteFoods[choiceIndex].isliked;
+  //   final name = _favoriteFoods[choiceIndex].name;
 
-    // update display
-    _favoriteFoods[choiceIndex].isliked = isFavorite;
+  //   // update display
+  //   _favoriteFoods[choiceIndex].isliked = isFavorite;
 
-    // update favorite list
-    if (isFavorite) {
-      addToFavorites(name);
-    } else {
-      removeFromFavorite(name);
-    }
+  //   // update favorite list
+  //   if (isFavorite) {
+  //     addToFavorites(name);
+  //   } else {
+  //     removeFromFavorite(name);
+  //   }
 
-    notifyListeners();
-  }
+  //   notifyListeners();
+  // }
 }
