@@ -6,7 +6,7 @@ A new Food Application project.
 ## Features
 - REST API
 - SharedPreferences
-- Image Cachinge
+- Image Caching
 - Riverpod
 - Splash
 - Cart
