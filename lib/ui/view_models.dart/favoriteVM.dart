@@ -1,8 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:foodapp/app/models/category.dart';
 import 'package:foodapp/app/uitils/storage_service.dart';
+import 'package:hooks_riverpod/all.dart';
 
-class FavoritesVM extends ChangeNotifier {
+class FavoritesNotifier extends    StateNotifier<List<FCategory>> {
+  FavoritesNotifier(state) : super(state ?? []);
+
   List<FCategory> favorites = [];
   StorageService service = StorageService();
 
@@ -10,15 +12,12 @@ class FavoritesVM extends ChangeNotifier {
     favorites = await service.getFavoriteFood();
     print("xxxxxx");
     print(favorites);
-    notifyListeners();
   }
 
-//remove from fav'
+  removeFav(FCategory f)async {
+    if (favorites.contains(f)) favorites.remove(f);
+    favorites = await service.getFavoriteFood();
 
-  void removeFromFavorite(FCategory food) {
-    favorites.remove(food);
-    service.replaceFavoriteFood(favorites);
-    notifyListeners();
   }
 
   clear(context) async {

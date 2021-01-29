@@ -13,6 +13,7 @@ class StorageService extends ChangeNotifier {
     try {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString(key, value);
+      notifyListeners();
     } catch (e) {
       print("An error ocuured");
     }
@@ -29,7 +30,8 @@ class StorageService extends ChangeNotifier {
     if (data == '') {
       return [];
     }
-        List<FCategory> favoriteFoods = _deserializeFoods(data);
+
+    List<FCategory> favoriteFoods = _deserializeFoods(data);
     return favoriteFoods;
   }
 
@@ -46,6 +48,15 @@ class StorageService extends ChangeNotifier {
   Future<void> saveFavoriteFood(List<FCategory> foodData) {
     String jsonString = _serializeFoods(foodData);
     return _saveToPreferences(sharePrefFavoritesKey, jsonString);
+  }
+
+  //remove and update
+  Future<void> replaceFavoriteFood(List<FCategory> f) async {
+    final prefs = await SharedPreferences.getInstance();
+    // prefs.remove(sharePrefFavoritesKey);
+
+     prefs.setString(sharePrefFavoritesKey, _serializeFoods(f));
+
   }
 
   String _serializeFoods(List<FCategory> data) {

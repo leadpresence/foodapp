@@ -5,9 +5,7 @@ import 'package:foodapp/app/models/category.dart';
 import 'dart:ui';
 import 'package:foodapp/app/uitils/custom_page_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:foodapp/main.dart';
 import 'package:foodapp/app/uitils/margin.dart';
-import 'package:foodapp/app/uitils/custom_page_route.dart';
 import 'package:foodapp/ui/views/food_category_list/food_list_view.dart';
 import 'package:foodapp/ui/widgets/spring_buttons.dart';
 

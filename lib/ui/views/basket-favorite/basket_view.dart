@@ -2,12 +2,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:foodapp/app/models/category.dart';
 import 'package:foodapp/app/uitils/margin.dart';
 import 'package:foodapp/app/uitils/providers.dart';
+import 'package:foodapp/ui/views/basket-favorite/basketgrid.dart';
 // import 'package:foodapp/ui/views/food_category_list/food_grid.dart';
 import 'package:hooks_riverpod/all.dart';
-import 'basketgrid.dart';
 class BasketView extends StatefulHookWidget {
   BasketView({Key key}) : super(key: key);
 
@@ -71,13 +70,7 @@ class _BasketViewState extends State<BasketView> {
                         kfoodlist: provider.basket ?? [],
                       ),
                     ),
-                    FloatingActionButton(
-                      onPressed: () {
-                        provider.clear(context);
-                      },
-                      child: Icon(FluentIcons.delete_24_regular),
-                      backgroundColor: Colors.orange,
-                    )
+                 
                   ],
                 )
                 

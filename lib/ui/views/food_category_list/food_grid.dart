@@ -130,15 +130,13 @@ class FoodBox extends HookWidget {
                   padding: const EdgeInsets.only(
                       left: 0.0, right: 8, top: 0, bottom: 8),
                   child: InkWell(
-                  splashColor: Colors.orange.shade200,
-
+                    splashColor: Colors.orange.shade200,
                     child: Icon(
                       FluentIcons.heart_24_regular,
                       size: 27,
                     ),
                     onTap: () {
-                      provider.addToFavorites(
-                        FCategory(
+                      provider.addToFavorites(FCategory(
                         name: name,
                         price: price,
                         imgurl: imgurl,
@@ -146,6 +144,7 @@ class FoodBox extends HookWidget {
                         category: category,
                         details: detail,
                       ));
+                      print("Added");
                     },
                   ),
                 ),

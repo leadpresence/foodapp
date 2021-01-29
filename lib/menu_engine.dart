@@ -36,6 +36,8 @@ class _MenuEngineState extends State<MenuEngine>
     var menuList = useProvider(menuVMProv.select((v) => v.pagesTabs));
 
     return Scaffold(
+
+
         body: Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -52,43 +54,42 @@ class _MenuEngineState extends State<MenuEngine>
             decoration: BoxDecoration(
                 
           )),
-          BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 9, sigmaY: 9),
-            child: Column(
-              children: <Widget>[
-                VMargin(10),
-                Container(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      HMargin(170),
-                      Text(
-                          "${tabController.index == 0 ? 'Meals' : tabController.index == 1 ? 'Favorites' : tabController.index == 2 ? 'Basket' : ''}"
-                              .toUpperCase(),
-                          style: TextStyle(
-                              fontSize: 19,
-                              color: Colors.orangeAccent[700],
-                              fontWeight: FontWeight.w700))
-                    ],
-                  ),
+          Column(
+            children: <Widget>[
+              VMargin(10),
+              Container(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    HMargin(170),
+                    Text(
+                        "${tabController.index == 0 ? 'Meals' : tabController.index == 1 ? 'Favorites' : tabController.index == 2 ? 'Basket' : ''}"
+                            .toUpperCase(),
+                        style: TextStyle(
+                            fontSize: 19,
+                            color: Colors.orangeAccent[700],
+                            fontWeight: FontWeight.w700))
+                  ],
                 ),
-                VMargin(10),
-                // Divider(
-                //   color: Colors.orangeAccent[700],
-                //   height: 3.5,
-                // ),
-                Flexible(
-                  child: TabBarView(
-                      controller: tabController,
-                      physics: NeverScrollableScrollPhysics(),
-                      children: menuList),
-                ),
-              ],
-            ),
+              ),
+              VMargin(10),
+         
+              Flexible(
+                child: TabBarView(
+                    controller: tabController,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: menuList),
+              ),
+            ],
           ),
         ]),
       ),
+
+
+
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -133,6 +134,7 @@ class _MenuEngineState extends State<MenuEngine>
           ],
         ),
       ),
-    ));
+    )
+    );
   }
 }

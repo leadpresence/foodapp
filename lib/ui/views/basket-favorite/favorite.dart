@@ -68,9 +68,20 @@ class _FavoritesState extends State<Favorites> {
                     Column(
                   children: [
                     Expanded(
-                      child: BuildFavIFoodGridUI(
-                        kfoodlist: provider.favorites ?? [],
-                      ),
+                      child:GridView.builder(
+                            itemCount: provider.favorites.length,
+                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2, crossAxisSpacing: 4.0, mainAxisSpacing: 4.0),
+                            itemBuilder: (BuildContext context, int index) {
+                              return FavFoodBox(
+                                name: provider.favorites[index].name,
+                                imgurl: provider.favorites[index].imgurl,
+                                price: provider.favorites[index].price,
+                                isliked: provider.favorites[index].isliked,
+                                category: provider.favorites[index].category,
+                              );
+      },
+    )
                     ),
             
                   ],
@@ -105,7 +116,7 @@ class BuildFavIFoodGridUI extends HookWidget {
   }
 }
 
-class FavFoodBox extends HookWidget {
+class FavFoodBox extends ConsumerWidget {
   final String name, category, price, imgurl, detail;
   final bool isliked, tobasket;
   final int index;
@@ -123,8 +134,8 @@ class FavFoodBox extends HookWidget {
       : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    var provider = useProvider(favProv);
+  Widget build(BuildContext context, watch) {
+    var provider = watch(favProv);
 
     return Container(
       decoration:
@@ -191,11 +202,11 @@ class FavFoodBox extends HookWidget {
                   splashColor: Colors.orange.shade200,
 
                     child: Icon(
-                      FluentIcons.delete_24_filled,
-                      size: 27,
+                      FluentIcons.delete_16_regular,
+                      size: 23,
                     ),
                     onTap: () {
-                      provider.removeFav(
+                      provider.removeFromFavorite(
                         FCategory(
                         name: name,
                         price: price,
@@ -204,6 +215,7 @@ class FavFoodBox extends HookWidget {
                         category: category,
                         details: detail,
                       ));
+                    print(" removed");
                     },
                   ),
                 ),

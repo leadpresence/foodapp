@@ -26,20 +26,26 @@ class FoodListViewModel extends ChangeNotifier {
 
   void addToBasket(FCategory food) {
     _foodBasktet.add(food);
-
     service.saveFoodToBasket(_foodBasktet);
+    notifyListeners();
   }
 
+
   void removeFromBasket(FCategory foodName) {
-        _favoriteFoods.add(foodName);
+    _favoriteFoods.add(foodName);
 
     service.saveFavoriteFood(_favoriteFoods);
+    notifyListeners();
+
   }
 
   void addToFavorites(FCategory foodName) {
     _favoriteFoods.add(foodName);
     service.saveFavoriteFood(_favoriteFoods);
+    notifyListeners();
   }
+
+  
 
 //remove from fav
 
@@ -51,6 +57,7 @@ class FoodListViewModel extends ChangeNotifier {
       }
     }
     service.saveFavoriteFood(_favoriteFoods);
+    notifyListeners();
   }
 
   // void toggleFavoriteStatus(int choiceIndex) {

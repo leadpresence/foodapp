@@ -45,7 +45,7 @@ class _FoodlistingState extends State<Foodlisting> {
                       }),
                   Container(
                     height: 40,
-                    width: (MediaQuery.of(context).size.width / 2) + 35,
+                    width: (MediaQuery.of(context).size.width ) - (MediaQuery.of(context).size.width/5),
                     margin: EdgeInsets.symmetric(horizontal: 5),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -71,24 +71,24 @@ class _FoodlistingState extends State<Foodlisting> {
                       ),
                     ),
                   ),
-                  IconButton(
-                      icon: Icon(
-                        FluentIcons.cart_20_regular,
-                        color: Colors.black45,
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context, CustomRouting(BasketView()));
+                  // IconButton(
+                  //     icon: Icon(
+                  //       FluentIcons.cart_20_regular,
+                  //       color: Colors.black45,
+                  //     ),
+                  //     onPressed: () {
+                  //       Navigator.pop(context, CustomRouting(BasketView()));
 
-                      }),
-                  IconButton(
-                      icon: Icon(
-                        FluentIcons.heart_20_regular,
-                        color: Colors.black45,
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context, CustomRouting(Favorites()));
+                  //     }),
+                  // IconButton(
+                  //     icon: Icon(
+                  //       FluentIcons.heart_20_regular,
+                  //       color: Colors.black45,
+                  //     ),
+                  //     onPressed: () {
+                  //       Navigator.pop(context, CustomRouting(Favorites()));
 
-                      }),
+                  //     }),
                 ],
               ),
               const VMargin(30),

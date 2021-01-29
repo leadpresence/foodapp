@@ -15,3 +15,13 @@ var storageProv = ChangeNotifierProvider((_) => StorageService());
 var foodListProv = ChangeNotifierProvider((_) => FoodListViewModel());
 var favProv = ChangeNotifierProvider((_) => FavoritesVM());
 var baskProv = ChangeNotifierProvider((_) => BasketViewModel());
+
+
+
+// final habitsProvider = StateNotifierProvider(
+//   (ref) => HabitListStateNotifier(
+//     [
+//       Habit(title: 'Example Habit'),
+//     ],
+//   ),
+// );

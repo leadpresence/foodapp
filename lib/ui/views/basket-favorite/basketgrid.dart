@@ -1,10 +1,12 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:foodapp/app/models/category.dart';
 import 'package:foodapp/app/uitils/providers.dart';
+import 'package:foodapp/ui/view_models.dart/basket_view_model..dart';
 import 'package:hooks_riverpod/all.dart';
+
+
 
 class BuildBasketGridUI extends HookWidget {
   final List<FCategory> kfoodlist;
@@ -17,19 +19,20 @@ class BuildBasketGridUI extends HookWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, crossAxisSpacing: 4.0, mainAxisSpacing: 4.0),
       itemBuilder: (BuildContext context, int index) {
+        FCategory f = kfoodlist[index];
         return BasketFoodBox(
-          name: kfoodlist[index].name,
-          imgurl: kfoodlist[index].imgurl,
-          price: kfoodlist[index].price,
-          isliked: kfoodlist[index].isliked,
-          category: kfoodlist[index].category,
+          name: f.name,
+          imgurl: f.imgurl,
+          price: f.price,
+          isliked: f.isliked,
+          category: f.category,
         );
       },
     );
   }
 }
 
-class BasketFoodBox extends HookWidget {
+class BasketFoodBox extends ConsumerWidget {
   final String name, category, price, imgurl, detail;
   final bool isliked, tobasket;
   final int index;
@@ -47,8 +50,7 @@ class BasketFoodBox extends HookWidget {
       : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    var provider = useProvider(foodListProv);
+  Widget build(BuildContext context, ScopedReader watch) {
 
     return Container(
       decoration:
@@ -106,7 +108,6 @@ class BasketFoodBox extends HookWidget {
                           bottomRight: Radius.circular(20))),
                 ),
                 SizedBox(),
-         
               ],
             ),
           )
@@ -115,6 +116,3 @@ class BasketFoodBox extends HookWidget {
     );
   }
 }
-
-
-
